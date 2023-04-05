@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * Locates a character in a string
  * @s: string to search in

@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * Copies memory area
  * @dest: pointer to the destination array where the content is to be copied

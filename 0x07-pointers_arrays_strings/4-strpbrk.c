@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * Searches a string for any of a set of bytes
  * @s: string to be searched

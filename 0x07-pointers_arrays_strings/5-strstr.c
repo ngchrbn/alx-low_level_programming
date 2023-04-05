@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * Locates a substring
  * @haystack: string to be searched

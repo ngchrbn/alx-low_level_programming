@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * Gets the length of a prefix substring
  * @s: string to be searched

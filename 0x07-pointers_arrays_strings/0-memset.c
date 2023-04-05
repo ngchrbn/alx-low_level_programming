@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * Fills memory with a constant byte
  * @s: pointer for the memory area to be filled
