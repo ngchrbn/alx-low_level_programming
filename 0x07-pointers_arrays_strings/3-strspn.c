@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Gets the length of a prefix substring
+ * _strspn - Gets the length of a prefix substring
  * @s: string to be searched
  * @accept: string containing the characters to match
  * Return: number of bytes in the initial segment of s which consist only of
@@ -10,7 +10,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-    int i, j, f;
+	int i, j, f;
 
 	i = 0;
 	while (s[i] != '\0')
