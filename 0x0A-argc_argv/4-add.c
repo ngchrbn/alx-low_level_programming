@@ -1,5 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+
+/**
+ * _is_digit - checks if a string is a digit
+ * @s: string to be processed
+ * Return: 1 if digit, 0 otherwise
+*/
+int _is_digit(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (!isdigit(s[i]))
+			return (0);
+	}
+	return (1);
+}
 /**
  * main - Prints the result of the sum of two positive numbers,
  * followed by a new line
@@ -16,7 +34,7 @@ int main(int argc, char *argv[])
 	{
 		for (j = 1; j < argc; j++)
 		{
-			if (atoi(argv[j]) == 0 || atoi(argv[j]) < 0)
+			if (!_is_digit(argv[j]))
 			{
 				printf("Error\n");
 				return (1);
