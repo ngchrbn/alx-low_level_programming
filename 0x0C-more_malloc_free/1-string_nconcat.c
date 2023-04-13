@@ -1,56 +1,6 @@
 #include <stdlib.h>
 
 /**
- * _strlen - returns the length of a string
- *
- * @s: string parameter input
- *
- * Return: length of string
-*/
-
-int _strlen(char *s)
-{
-	int counter;
-
-	for (counter = 0; *s != '\0'; ++s)
-		++counter;
-
-	return (counter);
-}
-
-/**
- * _concat - Concatenates two strings.
- * @s1: first string.
- * @s2: second string.
- * @n: size of final string.
- * Return: pointer to the new allocated space in memory.
-*/
-char *_concat(char *s1, char *s2, unsigned int n)
-{
-	unsigned int i, j;
-	unsigned int s1len = _strlen(s1);
-
-	char *result = malloc(sizeof(char) * (n + 1));
-
-	if (result == NULL)
-		return (NULL);
-
-	for (i = 0; i < s1len; i++)
-		result[i] = s1[i];
-
-	for (j = 0; j < (n - s1len); j++)
-	{
-		result[i] = s2[j];
-		i++;
-	}
-
-	result[i] = '\0';
-
-	return (result);
-}
-
-
-/**
  * string_nconcat - Concatenates two strings.
  * @s1: First string.
  * @s2: Second string.
@@ -61,27 +11,35 @@ char *_concat(char *s1, char *s2, unsigned int n)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *result;
-
-	int s1len = _strlen(s1);
-	int s2len = _strlen(s2);
+	char *s;
+	unsigned int i, j, k, l;
 
 	if (s1 == NULL)
 		s1 = "";
+
 	if (s2 == NULL)
 		s2 = "";
 
-	if (n >= (sizeof(s2) - 1))
-	{
-		result = _concat(s1, s2, (s1len + s2len));
+	for (i = 0; s1[i] != '\0'; i++)
+		;
+	for (j = 0; s2[j] != '\0'; j++)
+		;
 
-		return (result);
+	if (n >= j)
+		n = j;
 
-	}
-	else
-	{
-		result = _concat(s1, s2, (s1len + n));
+	s = malloc(sizeof(char) * (i + n + 1));
 
-		return (result);
-	}
+	if (s == NULL)
+		return (NULL);
+
+	for (k = 0; k < i; k++)
+		s[k] = s1[k];
+
+	for (l = 0; l < n; l++)
+		s[k + l] = s2[l];
+
+	s[k + l] = '\0';
+
+	return (s);
 }
