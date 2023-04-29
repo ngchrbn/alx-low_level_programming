@@ -1,12 +1,11 @@
-#include<stdio.h>
+#include <stdio.h>
+
+void __attribute__((constructor)) first(void);
 
 /**
- * first - prints a string before the main function is executed.
- * Return: void.
-*/
-
-void __attribute__ ((constructor)) first(void);
-
+ * first - Prints a string before the
+ *        main function is executed.
+ */
 void first(void)
 {
 	printf("You're beat! and yet, you must allow,\n"
