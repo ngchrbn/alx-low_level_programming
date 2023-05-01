@@ -4,7 +4,7 @@
  * get_nodeint_at_index - returns the nth node of a listint_t linked list.
  * @head: pointer to the first node of the list.
  * @index: index of the node, starting at 0.
- * Return: NULL if node does not exist, otherwise 
+ * Return: NULL if node does not exist, otherwise
  * pointer to the nth node of a listint_t linked list.
 */
 
