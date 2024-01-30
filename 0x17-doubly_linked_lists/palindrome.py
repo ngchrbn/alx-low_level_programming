@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-def ispalindrome(n):
-    string = str(n)
-    return string == string[::-1]
-
-array = []
+largest_palindrome = 0
 for i in range(999, 99, -1):
     for j in range(i, 99, -1):
-        if ispalindrome(i * j):
-            array.append(i * j)
-print(max(array))
+        product = i * j
+        if str(product) == str(product)[::-1] and product > largest_palindrome:
+            largest_palindrome = product
+
+with open('102-result', 'w') as f:
+    f.write(str(largest_palindrome))
